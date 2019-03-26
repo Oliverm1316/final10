@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="ASIANA, spol. s r. o." />
+
+
+<title>Besins healthcare</title>
+
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="site_libs/vis-4.16.1/vis.min.css" rel="stylesheet" />
+<script src="site_libs/vis-4.16.1/vis.min.js"></script>
+<link href="site_libs/timeline-0.4/timevis.css" rel="stylesheet" />
+<script src="site_libs/timevis-binding-0.4/timevis.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.0.2/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+<link href="site_libs/leaflet-easybutton-1.3.1/easy-button.css" rel="stylesheet" />
+<script src="site_libs/leaflet-easybutton-1.3.1/easy-button.js"></script>
+<script src="site_libs/leaflet-easybutton-1.3.1/EasyButton-binding.js"></script>
+<link href="site_libs/ionicons-2.0.1/ionicons.min.css" rel="stylesheet" />
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.5/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.16/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.16/js/buttons.print.min.js"></script>
+<link href="site_libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="FORMATO1.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CE Events</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Quotation</a>
+</li>
+<li>
+  <a href="about.html">Credentials</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Besins healthcare</h1>
+<h4 class="author"><em>ASIANA, spol. s r. o.</em></h4>
+<h4 class="date"><em>August 18th to 24th 2019</em></h4>
+
+</div>
+
+
+<script> 
+    $(document).ready(function() { 
+    $head = $('#header'); 
+    $head.prepend('<A href = https://www.cuttingedge-events.com><img src ="LOGO.png" width="150" align="right"></A>') 
+    }); 
+</script>
+<div id="accommodation" class="section level2">
+<h2>Accommodation</h2>
+<div id="main-hotel-h10-marina" class="section level3">
+<h3><strong>Main Hotel: H10 MARINA</strong></h3>
+<p>Enjoying a superb location in the <strong>Vila Olimpica district</strong>, just 25 minutes’ walk from the Gothic Quarter, the <strong>H10 Marina Barcelona hotel</strong> offers an outstanding range of services. It has four spacious meeting rooms with a capacity of up to 220 people and several areas bathed in natural light which are perfect for coffee breaks and/or cocktails. <strong>The Dionissos</strong> restaurant with its excellent signature cuisine is an ideal setting for working lunches/suppers and banquets. The Skyline terrace with its swimming pool, solarium and bar that opens in the summer makes an excellent option for private cocktails, affording spectacular views over the city and the sea. The Junior Suite rooms and the exclusive Privilege service, in addition to the Despacio Spa Centre, provide exquisite touches to enhance our guests’ experience of the hotel.</p>
+<p><strong>Icaria room</strong> for main meeting room <img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Icaria-montaje-escuela-con-coffee-break-2hmb.jpg"></p>
+<p><strong>Chardonnay room</strong> Breakout-room <img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Chardonnay-montaje-teatro-2.jpg"></p>
+<p><strong>Garnatxa room</strong> Breakout-room <img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Garnacha-montaje-U.jpg"></p>
+<p><strong>Xarelo room</strong> Breakout-room <img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Reuniones-Xarelo-montaje-escuela-1.jpg"></p>
+<p><img src = "https://res.cloudinary.com/lastminute/image/upload/c_scale,w_630/q_auto/v1541610006/7._HMB_Double_Room_kqngfl.jpg" width="360"> <img src = "http://www.poblenouurbandistrict.com/wp-content/uploads/2014/06/HOTEL-H10-MARINA-BARCELONA.png" width="360" align="right"></p>
+</div>
+<div id="alternative-hotels" class="section level3 tabset tabset-fade tabset-pills">
+<h3><strong>Alternative Hotels</strong></h3>
+<div id="sb-glow" class="section level4">
+<h4><strong>SB GLOW</strong></h4>
+<p><strong>SB Glow</strong> has 235 rooms. Located next to the emblematic Agbar Tower, at plaça de Les Glories, it is placed in the 22@ district: the innovation district that integrates research, training and transfer of technology centres, with large green areas which are intermingled between Barcelona’s industrial legacy. <strong>The Auditorium, Teatre Nacional de Catalunya</strong> and the <strong>new Mercat dels Encants</strong> complete the cultural and leisure offer in the area. <strong>SB glow</strong>, ideal combination of the latest technology trends and a professional, warm and thoughtful service, has been designed as an advanced, innovative and cosmopolitan hotel. In its two restaurants offer local cuisine based on the diversity of flavours, aromas and Mediterranean colours. A fresh, healthy and close proposal integrated in the city. An <strong>innovative Cocktail Bar</strong> offer the opportunity to enjoy the privileged Mediterranean weather as well as spectacular 360° views of the city, in a serene, friendly and relaxed atmosphere. Its meeting rooms and common spaces, surrounded by bright interior gardens, offer multiple solutions to hold all kinds of events. Meeting rooms from 35 to 370 square meters, equipped with cutting-edge image and sound technology.</p>
+<p><img src = "https://media-cdn.tripadvisor.com/media/photo-s/10/f4/6e/d9/hotel-sb-glow.jpg" width="360"> <img src = "https://r-ec.bstatic.com/images/hotel/max1280x900/116/116559198.jpg" width="360" align="right"></p>
+<p><strong>Garden 2 room</strong> for main meeting room</p>
+<p><img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/14.jpg"></p>
+<p><strong>Garden 3 room</strong> Breakout-room</p>
+<p><img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/17.jpg"></p>
+<p><strong>Ground 1 room</strong> Breakout-room</p>
+<p><img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/15.jpg"></p>
+<p><strong>Groove room</strong> Breakout-room</p>
+<p><img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/16.jpg"></p>
+</div>
+<div id="sb-icaria" class="section level4">
+<h4><strong>SB ICARIA </strong></h4>
+<p>The <strong>SB Icaria Barcelona</strong> (4 star, 180 rooms of different categories), is situated just two blocks from the beach and two metro stops from the city centre. It has meeting rooms with capacity for up to 300 people in a theatre style (height of 4.75 m) and various indoor and outdoor areas for staging events of all kinds. There are six meeting rooms which can easily be adapted to meet the needs of the client. As in all the hotels in the SB chain, services include free Wi-Fi connection, a swimming pool, gymnasium, sauna and Turkish bath. <strong>SB Hotels</strong> is a family business which is growing every day as it adapts to the needs of a demanding market. We work together with our clients with the aim of exceeding their expectations.</p>
+<p><img src = "https://photo1.hotelsclick.com/barcelona/18003/gross/sb-icaria-barcelona-restaurant.4.jpg" width="360"> <img src = "https://d2poxrheyfxwbo.cloudfront.net/resize/780x500/filters:quality(65):max_age(2604800)/s3/hotel/7dcc5baf-fc0c-49f5-b07c-f5ff79721d4f" width="360" align="right"></p>
+<p><strong>Europa room</strong> for main meeting room</p>
+<p><img src = "http://www.barcelona-on-line.es/imatges/salasreuniones/Icaria_Europa.jpg"></p>
+<p><strong>Bogatell room</strong> Breakout-room</p>
+<p><img src = "https://www.hotelicariabarcelona.com/wp-content/blogs.dir/1330/files/espacios-y-eventos/foto_sala_all_rooms.jpg"></p>
+<p><strong>S Sebastia room</strong> Breakout-room</p>
+<p><img src = "https://www.hotelicariabarcelona.com/wp-content/blogs.dir/1330/files/galeria-new/SB-ICARIA-MEETING-ROOMS-2.JPG"></p>
+<p><strong>Mar bella room</strong> Breakout-room</p>
+<p><img src = "https://www.hotelicariabarcelona.com/wp-content/blogs.dir/1330/files/espacios-y-eventos/39-espacios-marbella.jpg"></p>
+</div>
+<div id="vincci-maritimo" class="section level4">
+<h4><strong>VINCCI MARITIMO</strong></h4>
+<p>Within our hotels in Barcelona Spain, the <strong>Vincci Maritimo Hotel</strong> Offers an impressive sea view and next to the new Conference Palace (CCIB). This hotel is located in a new district called “Diagonal Mar”. Only a few miles from <strong>Mar-Bella Beach</strong> its all-round glass-front brings the light in to create a unique effect on the architecture and deco.</p>
+<p>Every bedroom offers plenty of space and natural daylight. The Hotel´s meeting rooms are the ideal place for business lunches and other events. And after a long work day, unwind in our Japanese garden. Very close to “Diagonal Mar” Shopping &amp; Leisure Centre, you will find all high street labels, bars and restaurants at our doorstep.</p>
+<p><img src = "https://www.vinccihoteles.com/sites/default/files/styles/flexslider_full/public/ofertas/14.jpg?itok=vwgsRaK7" width="360"> <img src = "https://t-ec.bstatic.com/images/hotel/max1024x768/153/153951748.jpg" width="360" align="right"></p>
+<p><strong>Mar room</strong> for main meeting room</p>
+<p><img src = "https://www.vinccihoteles.com/sites/default/files/styles/large/public/destacados-home-reuniones-y-eventos-vincci-maritimo-barcelona.jpg?itok=FLEIgFdH"></p>
+<p><strong>Condal room</strong> Breakout-room</p>
+<p><img src = "http://iberhospeda.com/foto-3-6812-hotel-vincci-maritimo-barcelona.jpg"></p>
+<p><strong>Llul room</strong> Breakout-room</p>
+<p><img src = "https://cdn4.hotelopia.com/giata/bigger/00/004569/004569a_hb_k_004.jpg"></p>
+</div>
+<div id="barcelona-princess" class="section level4">
+<h4><strong>BARCELONA PRINCESS</strong></h4>
+<p><strong>Hotel Barcelona Princess</strong> is a modern 4-star hotel located in the Forum area, <strong>within 7 minutes walking distance from the beach</strong>. It is one of Barcelona’s most representative hotels and contributes to the city’s architectural splendor.</p>
+<p>It is located at Diagonal Avenue facing the CCIB (International Convention Centre of Barcelona) and Diagonal Mar Shopping Mall. The hotel boasts 363 modern and comfortable rooms distributed in 26 floors with complimentary WiFi, Mini Bar, bathrobe and slippers in all room types.</p>
+<p>This innovative and business oriented hotel offers attractive and quality services to all guests. The hotel has 6 meeting spaces, 4 of them with natural daylight, ideal for any kind of event. Its spacious facilities have free access for all guests and the business center has 6 computers with Internet access and free printing.</p>
+<p>The hotel has 2 heated outdoor pools, one of them located on the 23rd floor with nice sea views. There are also a solarium, gym, sauna and massage cabins. Excellent public transport options to the city centre, just 15 minutes by metro, Tram or bus. Enjoy spectacular views of Barcelona and the Mediterranean Sea at your feet.</p>
+<p><img src = "https://x.cdrst.com/foto/hotel-sf/d7d/granderesp/hotel-barcelona-princess-habitacion-6b4dc43.jpg" width="360"> <img src = "https://www.max-tourism.com/wp-content/uploads/2017/08/PortadaBarcelonaPrincesscastellano.jpg" width="360" align="right"></p>
+<p><strong>Mediterraneo room</strong> for main meeting room</p>
+<p><img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/Sal%C3%B3n%20Mediterr%C3%A1neo.jpg?itok=2xiEJ3tB"></p>
+<p><strong>Forum room</strong> Breakout-room</p>
+<p><img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/mod_Forum%20-%20Hotel%20Barcelona%20Princess%20-%205.jpg?itok=JBMAQoff"></p>
+<p><strong>Princess 1 room</strong> Breakout-room</p>
+<p><img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/Princess%201.jpg?itok=Yt8qiBZJ"></p>
+<p><strong>Princess 2 room</strong> Breakout-room</p>
+<p><img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/Princess%202%20%282%29.jpg?itok=hKr-SbCb"></p>
+</div>
+<div id="ac-barcelona-by-marriott" class="section level4">
+<h4><strong>AC BARCELONA BY MARRIOTT</strong></h4>
+<p>The <strong>AC Barcelona Fórum</strong> is situated in Barcelona’s new business district. It offers 368 guest rooms, 17 meeting rooms and two exhibition areas and is at the cutting edge of urban hotels designed for events and conventions. The hotel is ideally located for business trips or city breaks, near the CCIB (Barcelona International Convention Centre) opposite the Diagonal Mar Shopping Centre and just 50 metres from the beach. Its 368 guest rooms include 240 standard rooms (four of them adapted for guests with reduced mobility), 80 superior rooms, 40 junior suites and eight suites, meaning that the hotel offers accommodation choices to suit everybody. The hotel has a restaurant, which specialises in Mediterranean cuisine and 24-hour room service offering all your favourite dishes. The 13th floor covers an area of 700 m2 and has the outdoor swimming pool with a sun deck and the <strong>Natura Café</strong> which opens during the summer months to offer guests a variety of fresh, light dishes as well as refreshing shakes and cocktails. The hotel’s 17 meeting rooms are distributed over three floors. Most of them have natural light and can host small meetings for ten people as well as large events for up to 560 people. The third floor has seven meeting rooms and two spectacular exhibition areas; the 14th floorhas nine more meeting rooms with uninterrupted views of the sea and city and its own private reception area. The largest-capacity meeting room (up to 560 people approx.) is on the fourth floor, opposite the restaurant. All the meeting rooms have modern, functional furniture,Wi-Fi and can provide all the necessary audiovisual equipment for your event. The AC Barcelona Forum offers everything you?ll need to ensure your events are a resounding success.</p>
+<p><img src = "https://z.cdrst.com/foto/hotel-sf/c4d/granderesp/hotel-ac-barcelona-forum-habitacion-4fa7709.jpg" width="360"> <img src = "https://www.shbarcelona.es/blog/es/wp-content/uploads/2015/06/cabecera-ac-barcelona-forum-piscina.jpg" width="360" align="right"></p>
+<p><strong>Montjuic room</strong> for main meeting room</p>
+<p><img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-classroom-2448-hor-wide.jpg?downsize=1440px:*"></p>
+<p><strong>S Gervasi room</strong> Breakout-room</p>
+<p><img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-meeting-0103-hor-wide.jpg?downsize=1440px:*"></p>
+<p><strong>Pedralbes room</strong> Breakout-room</p>
+<p><img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-meeting-2449-hor-wide.jpg?downsize=1440px:*"></p>
+<p><strong>Bonanova room</strong> Breakout-room</p>
+<p><img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-meeting-0089-hor-wide.jpg?downsize=1440px:*"></p>
+</div>
+<div id="hilton-diagonal-mar" class="section level4">
+<h4><strong>HILTON DIAGONAL MAR</strong></h4>
+<p><strong>Hilton Diagonal Mar Barcelona</strong> overlooks the Mediterranean Sea, at the center of Barcelona’s shopping and business district, just a few meters away from the International Convention Centre of Barcelona (CCIB). It has 433 rooms, including 110 newly renovated rooms, styled in cool, calm tones inspired by nature that allows to quickly disconnecting from the tiring day.</p>
+<p>The hotel has <strong>22 flexible meeting and conference rooms</strong> with natural light including a Ballroom with capacity for 1,000 people, and a large Hilton Pool Terrace area with a versatile floor space for events of up to 780 people for cocktails or private poolside celebrations. The hotel also boasts a fully equipped Business Center.</p>
+<p>It also has a gym, and an exclusive restaurant to enjoy an exquisite Mediterranean food, as well as a seasonal Purobeach Barcelona - an urban oasis of happiness and an authentic world of sensations. Purobeach Barcelona was voted one of the best beach clubs in the world by Conde Nast Traveler.</p>
+<p>Spend the day at the pool, add the pleasure of a relaxing treatment at the spa while listening to the unique Puro Music with the resident DJ’s, and discover the M3 cuisine concept with influences of Miami, Marrakech and Melbourne. Hotel guests will be able to enjoy Purobeach Barcelona sunbeds at special rates.</p>
+<p>The hotel is located 25 minutes from Barcelona airport and 15 minutes from the city center.</p>
+<p><img src = "https://www3.hilton.com/resources/media/hi/BCNDMHI/en_US/img/shared/full_page_image_gallery/main/HL_kfamilyrm3_8_1270x560_FitToBoxSmallDimension_Center.jpg" width="360"> <img src = "https://y.cdrst.com/foto/hotel-sf/422a/granderesp/hilton-diagonal-mar-barcelona-exterior-3d3debc.jpg" width="360" align="right"></p>
+<p><strong>Meeting room 5+6 room</strong> for main meeting room</p>
+<p><img src = "https://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton/B/BCNDMHI/BCNDMHI_gallery_Meetings_ballroom07.jpg"></p>
+<p><strong>Meeting room 1 room</strong> Breakout-room</p>
+<p><img src = "https://y.cdrst.com/foto/hotel-sf/422a/granderesp/hilton-diagonal-mar-barcelona-general-457a8ef.jpg"></p>
+<p><strong>Meeting room 2 room</strong> Breakout-room</p>
+<p><img src = "http://www.hiltonhotels.com/assets/img/hotels/LIMMFHH_Hilton_Lima_Miraflores/meeting-full-3.jpg"></p>
+<p><strong>Meeting room 3 room</strong> Breakout-room</p>
+<p><img src = "http://www.spain.conferencevenues.com/logos/hilton-diagonal-mar-barcelona-hotel-spain-image-13167-5-big.jpg"></p>
+</div>
+</div>
+</div>
+<div id="programme" class="section level2">
+<h2>Programme</h2>
+<div id="programme-overview-and-timeline" class="section level3">
+<h3><strong>Programme Overview and timeline</strong></h3>
+<div id="htmlwidget-49464966e64dd85c1d35" class="timevis html-widget" style="width:100%;height:300px;">
+<div class="btn-group zoom-menu">
+<button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
+<button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
+</div>
+</div>
+<script type="application/json" data-for="htmlwidget-49464966e64dd85c1d35">{"x":{"items":[{"id":" 1","start":"2019-08-18 10:00:00","content":"Transfer in","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":" 2","start":"2019-08-18 20:00:00","content":"Dinner Cangrejo loco","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 3","start":"2019-08-19 10:00:00","content":"Transfer in big group","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":" 4","start":"2019-08-19 16:00:00","content":"Conference","group":"3","type":"box","style":"background-color:#FF9933;"},{"id":" 5","start":"2019-08-19 20:00:00","content":"Buffet dinner hotel","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 6","start":"2019-08-20 08:30:00","content":"Full day Conference","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":" 7","start":"2019-08-20 20:30:00","content":"Dinner outside","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":" 8","start":"2019-08-21 08:30:00","content":"Full day Conference","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":" 9","start":"2019-08-21 20:30:00","content":"Buffet dinner hotel","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":"10","start":"2019-08-22 09:30:00","content":"Half day Conference","group":"1","type":"box","style":"background-color:#FF9933;"},{"id":"11","start":"2019-08-22 19:30:00","content":"Gala dinner","group":"4","type":"box","style":"background-color:#FF9933;"},{"id":"12","start":"2019-08-23 09:30:00","content":"Transfer Out","group":"1","type":"box","style":"background-color:#FF9933;"}],"groups":[{"id":"1","content":"Morning"},{"id":"2","content":"Lunch"},{"id":"3","content":"Afternoon"},{"id":"4","content":"Diner"}],"showZoom":true,"zoomFactor":0.2,"fit":true,"options":[],"height":300,"api":[{"method":"setOptions","options":{"orientation":"top","align":"left"}}]},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level3">
+<h3><strong>Map</strong></h3>
+<div id="htmlwidget-55bf5e5ab2dd7443b34a" style="width:768px;height:768px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-55bf5e5ab2dd7443b34a">{"x":{"options":{"minZoom":14,"maxZoom":18,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"dragging":true},"calls":[{"method":"addProviderTiles","args":["Esri",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[41.402175,41.3936649,41.4101986,41.410809,41.4084365,41.393156,41.4080936,41.3755733,41.3790732,41.3946046,41.3862392,41.3687343,41.3805405,41.3796584,41.3881704,41.3863077,41.3881704,41.3834058,41.3693,41.3953996,41.3908063,41.4095585],[2.1911498,2.1994532,2.2188449,2.218544,2.2177557,2.1926519,2.211912,2.1880005,2.1871941,2.1345846,2.1947384,2.1884028,2.1855685,2.1765082,2.2008832,2.1975017,2.2008832,2.1948376,2.15517,2.1617621,2.1670814,2.1268595],5,null,null,{"interactive":true,"className":"","stroke":true,"color":["#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#0000FF","#0000FF","#0000FF","#0000FF"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#C90089","#0000FF","#0000FF","#0000FF","#0000FF"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[[41.402175,41.3936649,41.4101986,41.410809,41.4084365,41.393156,41.4080936,41.3755733,41.3790732,41.3946046,41.3862392,41.3687343,41.3805405,41.3796584,41.3881704,41.3863077,41.3881704,41.3834058,41.3693,41.3953996,41.3908063,41.4095585],[2.1911498,2.1994532,2.2188449,2.218544,2.2177557,2.1926519,2.211912,2.1880005,2.1871941,2.1345846,2.1947384,2.1884028,2.1855685,2.1765082,2.2008832,2.1975017,2.2008832,2.1948376,2.15517,2.1617621,2.1670814,2.1268595],["<b>SB GLOW<\/b>","<b>SB ICARIA<\/b>","<b>AC BARCELONA<\/b>","<b>Barcelona Princess<\/b>","<b>Hilton diagonal Mar<\/b>","<b>H10 MARINA<\/b>","<b>VINCCI MARITIMO<\/b>","<b>Barceloneta<\/b>","<b>Ocean Club<\/b>","<b>Ikibana sarria<\/b>","<b>Can fisher<\/b>","<b>Mana 75<\/b>","<b>Cal Pintxo<\/b>","<b>Los Caracoles<\/b>","<b>Tinglado<\/b>","<b>Marina Bay<\/b>","<b>Cangrejo Loco<\/b>","<b>Arenal<\/b>","<b>Oleum<\/b>","<b>Pedrera<\/b>","<b>Glassroom<\/b>","<b>Torre de Bellesguard<\/b>"],null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]},{"method":"addLegend","args":[{"colors":["#FF0000","#C90089","#0000FF"],"labels":["Accom","Rest","Venue"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomright","type":"factor","title":null,"extra":null,"layerId":null,"className":"info legend","group":null}]},{"method":"addEasyButton","args":[{"icon":"ion-arrow-shrink","title":"Reset View","onClick":"function(btn, map){ map.setView(map._initialCenter, map._initialZoom); }","position":"topleft"}]}],"limits":{"lat":[41.3687343,41.410809],"lng":[2.1268595,2.2188449]}},"evals":["calls.4.args.0.onClick"],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (function(el, x){ var map = this; map._initialCenter = map.getCenter(); map._initialZoom = map.getZoom();}).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+</div>
+</div>
+<div id="restaurants-for-dinner-august-20th" class="section level2">
+<h2><strong>RESTAURANTS FOR DINNER AUGUST 20TH</strong></h2>
+<div id="recommended-restaurant-arenal" class="section level3">
+<h3><strong>Recommended: Restaurant Arenal</strong></h3>
+<ul>
+<li><strong>Location:</strong>Barceloneta beach</li>
+<li><strong>Cuisine:</strong>Mediterranea cuisine</li>
+<li><strong>Capacity:</strong> Inside 100 pax; outdoor terrace 50 pax</li>
+</ul>
+<p>There are many ways to enjoy a day on the beach. While some like to lay down under the sun of La Barceloneta, others prefer to contemplate the scene far from the high summer temperatures. For them all, Arenal offers a matchless option.</p>
+<p>The privileged location of the restaurant allows us to have lunch or dinner almost with our feet on the sand under the marquee of a wonderful terrace. Besides, the huge windows of the elegant interior dining room –in which walls are covered with large black and white pictures- offer stunning views with the blue Mediterranean sea as a backdrop.</p>
+<p><img src = "https://media-cdn.tripadvisor.com/media/photo-s/0e/e1/57/cc/entorno.jpg"></p>
+</div>
+<div id="alternative-restaurants" class="section level3 tabset tabset-fade tabset-pills">
+<h3><strong>Alternative Restaurants</strong></h3>
+<div id="tinglado" class="section level4">
+<h4><strong>Tinglado</strong></h4>
+<ul>
+<li><strong>Location:</strong>Olympic Port</li>
+<li><strong>Cuisine:</strong>Mediterranea cuisine</li>
+<li><strong>Capacity:</strong> Inside 160 pax; private rooms for 20, 40 and 23 pax. Outdoor terrace; capacity depending on the season</li>
+</ul>
+<p>Located at the the heart of Barcelona’s Vila Olímpica, <strong>El Tinglado</strong> is one of the fifteen restaurants that the emblematic Moncho’s Group owns in the city.</p>
+<p>Inspired by the authentic <strong>fishermen taverns</strong>, that remind of the old fish markets in Barcelona, the space has its own seafood stall where clients choose the pieces that will be roasted in the large natural charcoal grill. The menu also includes Mediterranean specialties such as paella and other rice dishes.</p>
+<p>The restaurant has different spaces and a terrace with sea views</p>
+<p><img src = "https://www.monchos.com/img_contenido/locales_galeria/4344_El-Tinglado-de-Moncho_s-(4).jpg"></p>
+</div>
+<div id="marina-bay" class="section level4">
+<h4><strong>Marina Bay</strong></h4>
+<ul>
+<li><strong>Location:</strong>Olympic Port</li>
+<li><strong>Cuisine:</strong>Mediterranea cuisine</li>
+<li><strong>Capacity:</strong> First floor 120 pax; ground floor 120 pax; outdoor terrace 40 pax; private rooms up to 20 and 40 pax</li>
+</ul>
+<p>Founded in 1990, the <strong>Moncho’s Group</strong> has over fifteen restaurants around the city. One of them is <strong>Marina Bay</strong> by Moncho’s, that has a 360° setting and dominates the views over Barcelona’s Port Olímpic and La Barceloneta beaches.</p>
+<p>In addition to the cozy interior dining room, the restaurant has two splendid terraces, one of them is covered and the other one located just below the Frank Guerhy’s ‘Peix Daurat’ and boasting great sea views.</p>
+<p><img src = "https://www.monchos.com/img_contenido/locales_galeria/2835_Marina-Bay-by-Moncho_s-(106).jpg"></p>
+</div>
+<div id="barceloneta" class="section level4">
+<h4><strong>Barceloneta</strong></h4>
+<ul>
+<li><strong>Location:</strong>Vell Port</li>
+<li><strong>Cuisine:</strong>Mediterranea cuisine</li>
+<li><strong>Capacity:</strong> 280 pax in total. 4 private meeting rooms with capacity from 20 to 70 pax</li>
+</ul>
+<p>Founded in 1996, <strong>Barceloneta</strong> has an excellent reputation in the port district. With its high quality Mediterranean gastronomy and the carefully chosen decoration, it has a privileged location that permits a wonderful sea-view of the fishing harbour and the marina of Barcelona.</p>
+<p>Its cuisine is constantly evolving but remains true to its early style which proved so popular, it´s based on traditional fish restaurant cooking, with simple but elaborated recipes, and always with the freshest and highest quality products.</p>
+<p>Desserts, cakes and ice-creams are home-made, and the wine list is extensive and select.</p>
+<p>Service is professional, highly experienced and fast.</p>
+<p>During the summer sesson, it has large terrasses for more than 290 people, with wonderful views to the sea. <img src = "https://media-cdn.tripadvisor.com/media/photo-s/01/e6/ec/fe/vista-desde-la-terraza.jpg"></p>
+</div>
+<div id="one-ocean-club" class="section level4">
+<h4><strong>One Ocean Club</strong></h4>
+<ul>
+<li><strong>Location:</strong>Vell Port</li>
+<li><strong>Cuisine:</strong>Mediterranea and Catalan cuisine</li>
+<li><strong>Capacity:</strong> 3 different spaces: indoor restaurant up to 80 pax ; outdoor terrace up to 30 pax; covered terrace up to 50 pax</li>
+</ul>
+<p>OneOcean Club is an exclusive private members’ club located in “OneOcean Port Vell” superyacht marina, opened in late 2014.</p>
+<p>The club includes a design restaurant and a cocktail lounge build out over the sea with amazing panoramic views of Barcelona’s skyline and the superyachts.</p>
+<p>This is a luxury oasis in a unique part of Barcelona, and is sure to be the go-to destination for Barcelona’s socially elite.</p>
+<p>With the interior design created by Barcelona’s El Equipo Creativo, the club combines comfort and style with unique views of the city, whether you’re relaxing on the bar terrace or sampling the culinary delights of our chefs.</p>
+<p>Working with ingredients sourced from markets in Barcelona, we have created an international, Catalan-fusion menu to put the club firmly on the fine-dining map.</p>
+<p><img src = "http://www.luxuryspain.es/wp-content/uploads/2018/09/one-ocean-club-LuxurySpain.jpg"></p>
+</div>
+<div id="can-fisher" class="section level4">
+<h4><strong>Can Fisher</strong></h4>
+<ul>
+<li><strong>Location:</strong>Icaria Beach</li>
+<li><strong>Cuisine:</strong>Market cuisine</li>
+<li><strong>Capacity:</strong> indoor up to 100 pax and terrace up to 80 pax</li>
+</ul>
+<p>Opened in June 2017, <strong>Can Fisher</strong> has a really attractive combination of elements: a modern design, a seafood cuisine with rice dishes as protagonists and an unbeatable location that provides the space with great views of the Mediterranean sea.</p>
+<p>The menu of the restaurant is based on fresh and local products, such as seafood and fish brought daily from the fish market and vegetables from the Barcelona’s garden. <strong>Can Fisher’s cuisine</strong> is traditionally based and recovers the flavors and aromas of a lifetime using current techniques.</p>
+<p>The restaurant has a large indoor dining room and a nice terrace ideal to enjoy the surroundings</p>
+<p><img src = "https://canfisher.com/wp/wp-content/uploads/2017/06/terraza.jpg"></p>
+</div>
+<div id="cal-pintxo" class="section level4">
+<h4><strong>Cal Pintxo</strong></h4>
+<ul>
+<li><strong>Location:</strong>Port Vell</li>
+<li><strong>Cuisine:</strong>Mediterranean cuisine</li>
+<li><strong>Capacity:</strong> indoor up to 160 pax and terrace up to 50 pax</li>
+</ul>
+<p>In a place like the huge <strong>Palau de Mar in Port Vell</strong>, so packed with restaurants, <strong>Cal Pintxo</strong> stands out from the rest thanks to the excellent traditional Catalan cuisine that focuses on fish dishes.</p>
+<p>The restaurant is elegant and, regardless of the time, we will find ourselves in an intimate cosy place where we will feel really at ease. Besides, the restaurant offers a wonderful terrace where every single meal becomes a nice time with the Mediterranean sea and Montjuic as backdrop. There is also a private room that holds up to 40 people.</p>
+<p><strong>Cal Pinxo’s</strong> menu is fresh and varied, and invites us to enjoy the real paellas, fideuas, fresh fish and seafood, always with the best quality and simply elaborated with dedication.</p>
+<p><img src = "https://u.tfstatic.com/restaurant_photos/511/2511/169/664/cal-pinxo-terraza-824bf.jpg"></p>
+</div>
+<div id="mana75" class="section level4">
+<h4><strong>Mana75</strong></h4>
+<ul>
+<li><strong>Location:</strong>Next to Barceloneta Beach</li>
+<li><strong>Cuisine:</strong>Mediterranean cuisine</li>
+<li><strong>Capacity:</strong> indoor up to 100 pax and terrace up to 60 pax</li>
+</ul>
+<p>In a space with an original and impeccable interior design and an impressive terrace of more than 300 square meters, we can enjoy a Mediterranean set menu prepared with fresh products.</p>
+<p>In the kitchen of <strong>Maná 75</strong>, the marine flavor takes on special prominence given its location close to the sea and the luxurious Hotel W. While we savor some great starters, in <strong>Maná 75</strong> we can see how our paella is prepared in a large bar with 19 stoves, the largest show cooking of rice from Europe.</p>
+<p><img src = "https://cdn.atrapalo.com/common/photo/res/51392/0/ticr_890_370.jpg"></p>
+</div>
+<div id="los-caracoles" class="section level4">
+<h4><strong>Los Caracoles</strong></h4>
+<ul>
+<li><strong>Location:</strong>Gothic quarter</li>
+<li><strong>Cuisine:</strong>Mediterranean and traditional catalan cuisine</li>
+<li><strong>Capacity:</strong> Many semi-private spaces with different capacities from 12 up to 50 pax.</li>
+</ul>
+<p>In 1835, the Bofarull family founded, in the heart of Barcelona’s Gothic Quarter, <strong>Los Caracoles</strong>, a restaurant that since its beginnings specialized in this popular Catalan dish (‘caracoles’ means ‘snails’) and other deeply-rooted recipes. Today, the fifth generation of the family sticks to the essence of this establishment that oozes history on every corner and attracts visitors from all the world.</p>
+<p>The peculiar and surprising decor of the restaurant keeps the charm of past times with an inevitable decadent air, and has welcomed all sorts of celebrities during its extensive career. The space is spread out over different dining rooms, all of the with their own personality and specially ideal for group celebrations.</p>
+<p>The gastronomy at <strong>Los Caracoles</strong> has no secrets and, although it is cooked with good products, it is really simple.</p>
+<p><img src = "http://cdn.restalo.com/static/img/restaurants/940/94065/94065_6915.gl.jpg"></p>
+</div>
+</div>
+</div>
+<div id="gala-dinner-options-for-august-22nd" class="section level2">
+<h2><strong>GALA DINNER OPTIONS FOR AUGUST 22ND</strong></h2>
+<div id="recommended-oleum-restaurant" class="section level3">
+<h3><strong>Recommended: Oleum Restaurant</strong></h3>
+<ul>
+<li><strong>Location:</strong>First floor inside Palau Nacional de Montjuic</li>
+<li><strong>Cuisine:</strong>Mediterranean cuisine</li>
+<li><strong>Capacity:</strong> Up to 120 pax.</li>
+</ul>
+<p>The great National Art Museum of Catalunya, the Palau Nacional de Montjuïc (National Palace) hosts the magnificent <strong>Òleum restaurant</strong>, which offers an environment and unparalleled views. From its windows we can see all of Barcelona and at night, on weekend, we can enjoy the magic fountain. It is ideal for art and gastronomy lovers.</p>
+<p>It is a very special environment, with a modern design and a sober and elegant atmosphere that gives us impressive views of Barcelona with Tibidabo in the background, thanks to huge windows and a panel of slanted mirrors that reflect the profile of the city.</p>
+<p>The cuisine presents a Mediterranean-inspired menu made with quality produce. Really, a right choice if we want to impress someone.</p>
+<p><em>For a group minimum of 50 paying guests, we can have the restaurant in exclusivity for the group. It has an independent entrance by an elevator but if the group will go to access through museum, it could be possible by authorization (10 days prior of the event and entrance costs)</em></p>
+<p><img src = "https://u.tfstatic.com/restaurant_photos/501/49501/169/612/oleum-sala-8df13.jpg"></p>
+</div>
+<div id="alternative-venues" class="section level3 tabset tabset-fade tabset-pills">
+<h3><strong>Alternative Venues</strong></h3>
+<div id="glassroom" class="section level4">
+<h4><strong>Glassroom</strong></h4>
+<ul>
+<li><strong>Location:</strong>Passeig de Gracia - Barcelona city centre</li>
+<li><strong>Cuisine:</strong>Catering</li>
+<li><strong>Capacity:</strong> Up to 60 pax.</li>
+</ul>
+<p>Welcome to the heart of Barcelona. Welcome to a modernist, magical, noble, elegant and bright space. In The GlassRoom, they have one main objective: to make any guests feel like at home, where the visitors can celebrate special moments ….</p>
+<p>This venue is an unique opportunity to know a house from XIX century located in the heart of Barcelona and recreate the reception and dinner in one of the most exclusive areas of the city: Passeig de Gracia, where all the main shops and monuments (Gaudi Houses are located in this boulevard).</p>
+<p><img src = "http://static1.squarespace.com/static/56a60592c21b866082d56892/56a9eb5b57eb8df616f03ffb/56f1103a40261d8cdb6b26b1/1495706147166/Comedor+-+TheGlassRoom+-+Gu%C3%ADaSingular.jpg?format=1500w"></p>
+</div>
+<div id="jean-leon-winery" class="section level4">
+<h4>**Jean Leon Winery*</h4>
+<ul>
+<li><strong>Location</strong> Jean Leon Winery - Penedes region</li>
+<li><strong>Duration</strong> 3 hours plus meal<br />
+</li>
+<li><strong>Capacity</strong> Minimum 10pax - maximum 150pax</li>
+<li><strong>Included</strong> Bus, activity according client wishes, meal and wine tasting</li>
+</ul>
+<p><strong>Jean Leon</strong> invites the visitors to discover the story of an extraordinary man who was ahead of his time. Thanks to his unique vision, he triumphed in Hollywood and achieved his dream of creating a signature wine</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OyDeLQsdS94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><strong><em>We will divide the group in 2 groups: 1 group will visit the winery with an expert of the property and the second group will have a cocktail in the gardens. Once the activity will finish, the groups will swap and do the other activity</em></strong></p>
+<p><strong><em>Once the group will have done both activities all together will do the wine tasting (3 wines) in winery gardens followed by the dinner “al fresco” if the weather is nice or indoor in the glass room overlooking Penedes valley</em></strong></p>
+<p><img src = "https://www.jeanleon.com/wp-content/uploads/2017/06/7-novias-7-hermanos-1.jpg"></p>
+</div>
+<div id="casa-mila" class="section level4">
+<h4><strong>Casa Mila</strong></h4>
+<ul>
+<li><strong>Location:</strong>Passeig de Gracia - Barcelona city centre</li>
+<li><strong>Cuisine:</strong>Catering</li>
+<li><strong>Capacity:</strong> Up to 200 pax. Different rooms for events</li>
+</ul>
+<p>Celebrate your special event at <strong>Casa Mila</strong>, one of Antoni Gaudi’s most famous buildings, an exclusive venue in the heart of Barcelona and an <strong>icon of the city</strong> that is recognised around the entire world. A work of art, both inside and out, and declared a World Heritage Site by <strong>UNESCO</strong>, La Pedrera today is a major cultural centre that radiates creation and knowledge.</p>
+<p>Finding a striking, attractive and welcoming space that will delight your guests can be difficult, all the more so if you are looking to create an unforgettable experience. <strong>La Pedrera</strong> is keen to ensure your event is a unique experience, and to make this happen it offers iconic spaces fully equipped in an outstanding Modernista setting in one of the most prestigious venues in Barcelona.</p>
+<p><img src = "https://cdn.getyourguide.com/img/tour_img-315009-148.jpg"></p>
+<p>For the group we will have the <strong>room Gaudi</strong> in exclusivity <img src = "https://www.lapedrera.com/sites/default/files/2018-03/lloguer-pedrera-gaudi-esdeveniments-bcn.JPG"></p>
+<p>END OF THE PROGRAMME</p>
+<hr />
+</div>
+</div>
+</div>
+<div id="budget" class="section level2">
+<h2>Budget</h2>
+<div id="htmlwidget-ad8a902738fe0438ad25" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ad8a902738fe0438ad25">{"x":{"filter":"none","extensions":["Buttons"],"data":[["2019-08-18","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-18","2019-08-18","2019-08-18","2019-08-19","2019-08-19","2019-08-20","2019-08-20","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-23",null,null,null,null,"2019-08-18","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19",null,"2019-08-18","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19",null,"2019-08-18","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19",null,"2019-08-18","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19",null,"2019-08-18","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19",null,"2019-08-18","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19","2019-08-19",null,"2019-08-20","2019-08-20","2019-08-20","2019-08-20","2019-08-20","2019-08-20","2019-08-20","2019-08-20","2019-08-20",null,"2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22",null,"2019-08-22","2019-08-22","2019-08-22","2019-08-22","2019-08-22",null,"2019-08-22","2019-08-22","2019-08-22","2019-08-22"],["Accom","Accom","Accom","Accom","Room","Room","Room","Av","F&amp;B","F&amp;B","Trnsf","Trnsf","Rest","Trnsf","Trnsf","Trnsf","Rest","Trnsf","VENUE","VENUE","VENUE","Entr","Entr","Entr","Entr","Entr","Entr","Entr","Entr","Entr","Trnsf",null,null,null,null,"Accom","Accom","Accom","Accom","Room","Room","Room","Room","Av","Av","Av","AV","F&amp;B","F&amp;B",null,"Accom","Accom","Accom","Accom","Room","Room","Room","Room","Av","Av","AV","F&amp;B","F&amp;B",null,"Accom","Accom","Accom","Accom","Room","Room","Room","Av","F&amp;B","F&amp;B",null,"Accom","Accom","Accom","Accom","Room","Room","Room","Av","F&amp;B","F&amp;B",null,"Accom","Accom","Accom","Accom","Room","Room","Room","Room","F&amp;B","F&amp;B","F&amp;B",null,"Accom","Accom","Accom","Accom","Room","Room","Room","Room","Av","Av","F&amp;B","F&amp;B",null,"Rest","Rest","Rest","Rest","Rest","Rest","Rest","Rest","Rest",null,"VENUE","VENUE","VENUE","VENUE","VENUE",null,"VENUE","VENUE","VENUE","VENUE","VENUE",null,"VENUE","VENUE","VENUE","VENUE"],["H10 MARINA",null,null,null,null,null,null,null,null,null,"Transfer in","Transfer for dinner","Cangrejo Loco","Transfer in",null,"Transfer for dinner","Arenal Restaurant","Transfer for dinner","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Oleum Restaurant","Transfer OUT",null,null,null,null,"OPTIONAL HOTEL SB ICARIA",null,null,null,null,null,null,null,null,null,null,null,null,null,null,"OPTIONAL HOTEL SB GLOW",null,null,null,null,null,null,null,null,null,null,null,null,null,"OPTIONAL HOTEL","BARCELONA PRINCESS",null,null,null,null,null,null,null,null,null,"OPTIONAL HOTEL","VINCCI MARITIMO",null,null,null,null,null,null,null,null,null,"OPTIONAL HOTEL","HILTON DIAGONAL MAR",null,null,null,"Minimum charge 60 pax","Minimum charge 60 pax",null,null,null,null,null,"OPTIONAL HOTEL","AC BARCELONA BY MARRIOT",null,null,null,null,null,null,null,null,null,null,null,"Optional Restaurant","Optional Restaurant","Optional Restaurant","Optional Restaurant","Optional Restaurant","Optional Restaurant","Optional Restaurant","Optional Restaurant","Optional Restaurant",null,"The Glassroom",null,null,null,null,null,"Jean leon Winery",null,null,null,null,null,"Casa Mila",null,null,null],[5,84,68,225,2,2,6,null,220,330,1,1,5,1,null,1,55,1,55,55,6,1,1,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["DUIs, b.breakfast included","DUIs, b.breakfast included (21 rooms x 4 nights)","DOBs, b.breakfast included (17 rooms x 4 nights)","City tax","Plenary room Icaria — Full day rate","Plenary room Icaria  - Half day rate","Breakout rooms - full day rate - rate per room per day (3 rooms x 2 days)","Hire cost of main meeting room including screen, projector, internet connection and 2 mics","Basic Coffee break - rate per service per person from (estimated 55 persons x 4 coffee breaks) from","Buffet Lunch or dinner - rate per service per person from (estimated 55 persons x 4 lunches and 2 dinners ) from","Minivan transfer for 5 people from Barcelona airport to hotel in Barcelona city - rate per transfer per way from","Minivan transfer at disposal 4 hours for dinner from hotel to Restaurant el Cangrejo loco and back after dinner from","Dinner in Cangrejo Loco - rate per person from","59 seater coach for transfer from Barcelona airport to hotel in the city - rate per person from (from 8am to 8pm)","Optional: Mineral water on board - rate per bottle from","59 seater coach 4 hours at disposal for dinner - Hotel - Restaurant in Barcelona and back to hotel after dinner","Dinner in Restaurant Arenal including supplement for dinner at the terrace - 3 courses menu including drink package and coffee - rate per person from","59 seater coach 4 hours at disposal for dinner - Hotel - venue in Barcelona and back to hotel after dinner","Welcome cocktail to be served in the same room - rate per person from","Gala dinner menu- rate per person from (exclusivity for a minimum of 45 paying guests)","Basic flower arrangements from","Spanish guitarist - 1,30h show with breaks from","Rumba Catalana show - 3 guitarist and 2 dancers - mobile show - from","Technicians and transport from","Optional: Oleum restaurant extra lighting from","Optional: Stage lighting from","Optional: Basic sound system from","Optional: Stage from","Optional: Flamenco show. - 25 minutes duration : 1 guitarist, percusionist, singer and dancers (2) from","Optional: Mics and tv for flamenco show from","71 seater coach for transfer from Barcelona airport to hotel in the city - rate per person from (from 8am to 8pm)",null,"Total",null,null,"DUIs, b.breakfast included","DUIs, b.breakfast included (21 rooms x 4 nights)","DOBs, b.breakfast included (17 rooms x 4 nights)","City tax","Plenary room Europa - Full day rate","Plenary room Europa - Half day rate","Breakout rooms - full day rate - rate per room per day (3 rooms x 2 days)","Breakout rooms - half day rate - rate per room per day","Sound system main meeting room - rate per day","Extra mic - rate per unit (estimated 1 per day)","Technician - rate per hour (mandatory if we contract more than 3 mics)","Flipchart - rate per unit from","Coffee break - rate per service per person from (estimated 55 persons x 4 coffee breaks) from","Buffet Lunch or dinner - rate per service per person from (estimated 55 persons x 4 lunches and 2 dinners ) from",null,"DUIs, b.breakfast included","DUIs, b.breakfast included (21 rooms x 4 nights)","DOBs, b.breakfast included (17 rooms x 4 nights)","City tax","Plenary roomGARDEN 2 - Full day rate","Plenary room Europa - Half day rate","Breakout rooms - full day rate - rate per room per day (3 rooms x 2 days)","Breakout rooms - half day rate - rate per room per day","Sound system main meeting room - rate per day","Extra mic - rate per unit (estimated 1 per day)","Flipchart - rate per unit from","Coffee break - rate per service per person from (estimated 55 persons x 4 coffee breaks) from","Buffet Lunch or dinner - rate per service per person from (estimated 55 persons x 4 lunches and 2 dinners ) from",null,"DUIs, b.breakfast included","DUIs, b.breakfast included (21 rooms x 4 nights)","DOBs, b.breakfast included (17 rooms x 4 nights)","City tax","Plenary room Mediterraneo 127sqm — Full day rate","Plenary room Mediterraneo  - Half day rate","Breakout rooms - full day rate - rate per room per day (3 rooms x 2 days)","Pack audio for main meeting room including: scree, projector, flipchart, basic sound system and 1 mic, technician half day (working day)","Coffee break - rate per service per person from (estimated 55 persons x 4 coffee breaks) from","Buffet Lunch or dinner - rate per service per person from (estimated 55 persons x 4 lunches and 2 dinners ) from",null,"DUIs, b.breakfast included","DUIs, b.breakfast included (21 rooms x 4 nights)","DOBs, b.breakfast included (17 rooms x 4 nights)","City tax","Plenary room Mar 180sqm — Full day rate","Plenary room Mar 180sqm — Half  day rate","Breakout rooms - full day rate - rate per room per day - only 2 breakout rooms available","Screen and projector pack","Coffee break - rate per service per person from (estimated 55 persons x 4 coffee breaks) from","3 courses lunch  or dinner - rate per service per person from (estimated 55 persons x 4 lunches and 2 dinners ) from",null,"DUIs, b.breakfast included","DUIs, b.breakfast included (21 rooms x 4 nights)","DOBs, b.breakfast included (17 rooms x 4 nights)","City tax","Plenary room meeting room 5+6  — Full day rate","DDR package including 2 coffee breaks, lunch and main meeting room - rate per person per day","DDR package including 1 coffee breaks, lunch and main meeting room - rate per person per day","Breakout rooms - full day rate - rate per room per day (3 rooms x 2 days)","Coffee break - rate per service per person from (estimated 55 persons x 4 coffee breaks) from","Buffet Lunch or dinner - rate per service per person from (estimated 55 persons x 4 lunches and 2 dinners ) from","Drink package - rate per person per service fromo",null,"DUIs, b.breakfast included","DUIs, b.breakfast included (21 rooms x 4 nights)","DOBs, b.breakfast included (17 rooms x 4 nights)","City tax","Plenary room Montjuic — Half day rate","DDR package including 2 coffee breaks, lunch and main meeting room - rate per person per day","DDR package including 1 coffee breaks, lunch and main meeting room - rate per person per day","Breakout rooms - full day rate - rate per room per day (3 rooms x 2 days)","Beamer 2000 L- rate per day from","Screen 2,4x1,8 - rate per day from","Coffee break - rate per service per person from (estimated 55 persons x 4 coffee breaks) from","Buffet Lunch or dinner - rate per service per person from (estimated 55 persons x 4 lunches and 2 dinners ) from",null,"Dinner in Restaurant Tinglado - 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant Marina Bay  - 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant La Barceloneta - 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant One ocean club  - 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant ikibana Sarria - 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant Can Fisher  - 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant Cal Pintxo- 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant mana 75- 3 courses menu, drink package and coffee included - rate per person from","Dinner in Restaurant Los Caracoles - 3 courses menu, drink package and coffee included - rate per person from",null,"hire cost of the venue","Welcome drink from","Gala dinner menu- rate per person from","Open bar after dinner - 1 hour - rate per person from","Dj for party",null,"hire cost of the venue including winery guide visit","Wine tasting - rate per person from","Apetizers with welcome drink - rate per person from","3 courses menu - drink package included rom","Open bar after dinner - 1 hour - rate per person from",null,"hire cost of the venue","Apetizers with welcome drink - rate per person from","3 courses menu - drink package included rom","Open bar after dinner - 1 hour - rate per person from"],[169,169,179,1.1,650,550,450,null,9,36.5,103,341,45,235,1.5,486.588235294118,49.5,486.588235294118,14.6666666666667,88,35,680.625,2420,1179.75,907.5,317.625,453.75,226.875,2344.375,242,307,null,null,null,null,175,175,190,1.21,1100,850,365,275,225,75,75,25,6.5,37,null,165,165,185,1.1,1700,1190,550,386,312.5,86.25,25,9,37,null,192.5,192.5,209,1.1,968,629.2,302.5,582.3125,12,41.5,null,163,163,180,1.1,786.5,605,605,155,9,35,null,189,189,209,1.1,1150,95,82.5,575,12.5,49,22,null,196.9,196.9,218.9,1.1,968,118.338,102.366,302.5,230,79,12,53,null,44.5,44.5,72.5,71.25,56.25,57.5,60,50,52,null,962.5,15.15,103,14,605,null,1134.375,7.5625,9.625,88,15.125,null,2823.33333333333,11,116.111111111111,10.7555555555556],[845,14196,12172,247.5,1300,1100,2700,null,1980,12045,103,341,225,235,0,486.588235294118,2722.5,486.588235294118,806.666666666667,4840,210,680.625,2420,0,0,0,0,0,0,0,307,null,60449.4681372549,null,null,0,0,0,0,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,null,0,0,0,0,0,0,0,0,0,0,null,null,0,0,0,0,0,0,0,0,0,0,0,0,null,null,null,null,null,null,null,null,null,null,null,0,0,0,0,0,null,0,0,0,0,0,null,0,0,0,0]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>DATE<\/th>\n      <th>CAT<\/th>\n      <th>Owner<\/th>\n      <th>Quantity<\/th>\n      <th>Concept<\/th>\n      <th>withVAT<\/th>\n      <th>Total<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"initComplete":"\n    function(settings, json) {\n      $(this.api().table().header()).css({\n        'background-color': '#ee7600 ',\n        'color': '#fff'\n      });\n    }","dom":"Bfrtip","buttons":["copy","print"],"pageLength":137,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[3,5,6]}],"order":[],"orderClasses":false,"lengthMenu":[10,25,50,100,137],"rowCallback":"function(row, data) {\nDTWidget.formatDate(this, row, data, 0, 'toDateString');\nDTWidget.formatCurrency(this, row, data, 5, '€', 2, 3, ',', '.', true);\nDTWidget.formatCurrency(this, row, data, 6, '€', 2, 3, ',', '.', true);\n}"}},"evals":["options.initComplete","options.rowCallback"],"jsHooks":[]}</script>
+<div id="terms-conditions" class="section level3">
+<h3>Terms &amp; Conditions</h3>
+<p>*Rates valid for 2019.</p>
+<p>*Net rates for ASIANA, spol. s r. o.</p>
+<p>*For a group of minimum 55 pax</p>
+<p>*Cutting Edge Events management fee including in the detailed rates</p>
+<p>*VAT included.</p>
+<p>*No reservation has been done. Availability upon request.</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

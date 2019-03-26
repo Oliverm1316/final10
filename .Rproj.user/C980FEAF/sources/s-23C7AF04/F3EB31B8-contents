@@ -1,0 +1,548 @@
+---
+title: "Besins healthcare"
+author: "ASIANA, spol. s r. o."
+date: 'August 18th to 24th 2019'
+output:
+ 
+  html_document:
+    css: FORMATO1.css
+    fig_width: 8
+    fig_height: 8
+    highlight: textmate
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+    
+---
+
+<script> 
+    $(document).ready(function() { 
+    $head = $('#header'); 
+    $head.prepend('<A href = https://www.cuttingedge-events.com><img src ="LOGO.png" width="150" align="right"></A>') 
+    }); 
+</script> 
+
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+library(readxl)
+library(shiny)
+library(dplyr)
+library(knitr)
+```
+
+
+## Accommodation
+
+### **Main Hotel: H10 MARINA**
+
+Enjoying a superb location in the **Vila Olimpica district**, just 25 minutes' walk from the Gothic Quarter, the **H10 Marina Barcelona hotel** offers an outstanding range of services. It has four spacious meeting rooms with a capacity of up to 220 people and several areas bathed in natural light which are perfect for coffee breaks and/or cocktails. **The Dionissos** restaurant with its excellent signature cuisine is an ideal setting for working lunches/suppers and banquets. The Skyline terrace with its swimming pool, solarium and bar that opens in the summer makes an excellent option for private cocktails, affording spectacular views over the city and the sea. The Junior Suite rooms and the exclusive Privilege service, in addition to the Despacio Spa Centre, provide exquisite touches to enhance our guests' experience of the hotel.
+
+**Icaria room** for main meeting room
+<img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Icaria-montaje-escuela-con-coffee-break-2hmb.jpg"> 
+
+**Chardonnay room** Breakout-room
+<img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Chardonnay-montaje-teatro-2.jpg"> 
+
+**Garnatxa room** Breakout-room
+<img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Garnacha-montaje-U.jpg">
+
+**Xarelo room** Breakout-room
+<img src = "https://cmspro.h10hotels.com/ImagenesHotel/Sala-Reuniones-Xarelo-montaje-escuela-1.jpg">
+
+
+<img src = "https://res.cloudinary.com/lastminute/image/upload/c_scale,w_630/q_auto/v1541610006/7._HMB_Double_Room_kqngfl.jpg" width="360"> <img src = "http://www.poblenouurbandistrict.com/wp-content/uploads/2014/06/HOTEL-H10-MARINA-BARCELONA.png" width="360" align="right">
+
+
+### **Alternative Hotels** {.tabset .tabset-fade .tabset-pills}
+
+#### **SB GLOW**
+
+**SB Glow** has 235 rooms. Located next to the emblematic Agbar Tower, at plaça de Les Glories, it is placed in the 22@ district: the innovation district that integrates research, training and transfer of technology centres, with large green areas which are 
+intermingled between Barcelona's industrial legacy. **The Auditorium, Teatre Nacional de Catalunya** and the **new Mercat dels Encants** complete the cultural and leisure offer in the area. **SB glow**, ideal combination of the latest technology trends and a professional, warm and thoughtful service, has been designed as an advanced, innovative and cosmopolitan hotel. 
+In its two restaurants offer local cuisine based on the diversity of flavours, aromas and Mediterranean colours. A fresh, healthy and close proposal integrated in the city. 
+An **innovative Cocktail Bar** offer the opportunity to enjoy the privileged Mediterranean weather as well as spectacular 360° views of the city, in a serene, friendly and relaxed atmosphere. 
+Its meeting rooms and common spaces, surrounded by bright interior gardens, offer multiple solutions to hold all kinds of events. Meeting rooms from 35 to 370 square meters, equipped with cutting-edge image and sound technology.
+
+<img src = "https://media-cdn.tripadvisor.com/media/photo-s/10/f4/6e/d9/hotel-sb-glow.jpg" width="360"> <img src = "https://r-ec.bstatic.com/images/hotel/max1280x900/116/116559198.jpg" width="360" align="right">
+
+
+**Garden 2 room** for main meeting room
+
+<img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/14.jpg"> 
+
+**Garden 3 room** Breakout-room
+
+<img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/17.jpg"> 
+
+**Ground 1 room** Breakout-room
+
+<img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/15.jpg">
+
+**Groove room** Breakout-room
+
+<img src = "https://www.hotelsbglow.com/wp-content/blogs.dir/1329/files/events/16.jpg">
+
+
+#### **SB ICARIA **
+
+The **SB Icaria Barcelona** (4 star, 180 rooms of different categories), is situated just two blocks from the beach and two metro stops from the city centre. It has meeting rooms with capacity for up to 300 people in a theatre style (height of 4.75 m) and various indoor and outdoor areas for staging events of all kinds. There are six meeting rooms which can easily be adapted to meet the needs of the client. As in all the hotels in the SB chain, services include free Wi-Fi connection, a swimming pool, gymnasium, sauna and Turkish bath. **SB Hotels** is a family business which is growing every day as it adapts to the needs of a demanding market. We work together with our clients with the aim of exceeding their expectations.
+
+<img src = "https://photo1.hotelsclick.com/barcelona/18003/gross/sb-icaria-barcelona-restaurant.4.jpg" width="360"> <img src = "https://d2poxrheyfxwbo.cloudfront.net/resize/780x500/filters:quality(65):max_age(2604800)/s3/hotel/7dcc5baf-fc0c-49f5-b07c-f5ff79721d4f" width="360" align="right">
+
+
+**Europa room** for main meeting room
+
+<img src = "http://www.barcelona-on-line.es/imatges/salasreuniones/Icaria_Europa.jpg"> 
+
+**Bogatell room** Breakout-room
+
+<img src = "https://www.hotelicariabarcelona.com/wp-content/blogs.dir/1330/files/espacios-y-eventos/foto_sala_all_rooms.jpg"> 
+
+**S Sebastia room** Breakout-room
+
+<img src = "https://www.hotelicariabarcelona.com/wp-content/blogs.dir/1330/files/galeria-new/SB-ICARIA-MEETING-ROOMS-2.JPG">
+
+**Mar bella room** Breakout-room
+
+<img src = "https://www.hotelicariabarcelona.com/wp-content/blogs.dir/1330/files/espacios-y-eventos/39-espacios-marbella.jpg">
+
+
+
+#### **VINCCI MARITIMO**
+
+Within our hotels in Barcelona Spain, the **Vincci Maritimo Hotel** Offers an impressive sea view and next to the new Conference Palace (CCIB). This hotel is located in a new district called “Diagonal Mar”. 
+Only a few miles from **Mar-Bella Beach** its all-round glass-front brings the light in to create a unique effect on the architecture and deco. 
+
+Every bedroom offers plenty of space and natural daylight. The Hotel´s meeting rooms are the ideal place for business lunches and other events. And after a long work day, unwind in our Japanese garden. 
+Very close to “Diagonal Mar” Shopping & Leisure Centre, you will find all high street labels, bars and restaurants at our doorstep. 
+
+<img src = "https://www.vinccihoteles.com/sites/default/files/styles/flexslider_full/public/ofertas/14.jpg?itok=vwgsRaK7" width="360"> <img src = "https://t-ec.bstatic.com/images/hotel/max1024x768/153/153951748.jpg" width="360" align="right">
+
+**Mar room** for main meeting room
+
+<img src = "https://www.vinccihoteles.com/sites/default/files/styles/large/public/destacados-home-reuniones-y-eventos-vincci-maritimo-barcelona.jpg?itok=FLEIgFdH"> 
+
+**Condal room** Breakout-room
+
+<img src = "http://iberhospeda.com/foto-3-6812-hotel-vincci-maritimo-barcelona.jpg"> 
+
+**Llul room** Breakout-room
+
+<img src = "https://cdn4.hotelopia.com/giata/bigger/00/004569/004569a_hb_k_004.jpg">
+
+
+#### **BARCELONA PRINCESS**
+
+**Hotel Barcelona Princess** is a modern 4-star hotel located in the Forum area, **within 7 minutes walking distance from the beach**. It is one of Barcelona’s most representative hotels and contributes to the city’s architectural splendor.
+
+It is located at Diagonal Avenue facing the CCIB (International Convention Centre of Barcelona) and Diagonal Mar Shopping Mall. The hotel boasts 363 modern and comfortable rooms distributed in 26 floors with complimentary WiFi, Mini Bar, bathrobe and slippers in all room types.
+
+This innovative and business oriented hotel offers attractive and quality services to all guests. The hotel has 6 meeting spaces, 4 of them with natural daylight, ideal for any kind of event. Its spacious facilities have free access for all guests and the business center has 6 computers with Internet access and free printing.
+
+The hotel has 2 heated outdoor pools, one of them located on the 23rd floor with nice sea views. There are also a solarium, gym, sauna and massage cabins. Excellent public transport options to the city centre, just 15 minutes by metro, Tram or bus. Enjoy spectacular views of Barcelona and the Mediterranean Sea at your feet.
+
+<img src = "https://x.cdrst.com/foto/hotel-sf/d7d/granderesp/hotel-barcelona-princess-habitacion-6b4dc43.jpg" width="360"> <img src = "https://www.max-tourism.com/wp-content/uploads/2017/08/PortadaBarcelonaPrincesscastellano.jpg" width="360" align="right">
+
+
+**Mediterraneo room** for main meeting room
+
+<img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/Sal%C3%B3n%20Mediterr%C3%A1neo.jpg?itok=2xiEJ3tB"> 
+
+**Forum room** Breakout-room
+
+<img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/mod_Forum%20-%20Hotel%20Barcelona%20Princess%20-%205.jpg?itok=JBMAQoff"> 
+
+**Princess 1 room** Breakout-room
+
+<img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/Princess%201.jpg?itok=Yt8qiBZJ">
+
+**Princess 2 room** Breakout-room
+
+<img src = "https://hotelbarcelonaprincess.com/sites/default/files/styles/porlets_interiores/public/Princess%202%20%282%29.jpg?itok=hKr-SbCb">
+
+
+
+#### **AC BARCELONA BY MARRIOTT**
+
+The **AC Barcelona Fórum** is situated in Barcelona's new business district. It offers 368 guest rooms, 17 meeting rooms and two exhibition areas and is at the cutting edge of urban hotels designed for events and conventions. 
+The hotel is ideally located for business trips or city breaks, near the CCIB (Barcelona International Convention Centre) opposite the Diagonal Mar Shopping Centre and just 50 metres from the beach. 
+Its 368 guest rooms include 240 standard rooms (four of them adapted for guests with reduced mobility), 80 superior rooms, 40 junior suites and eight suites, meaning that the hotel offers accommodation choices to suit everybody. 
+The hotel has a restaurant, which specialises in Mediterranean cuisine and 24-hour room service offering all your favourite dishes. 
+The 13th floor covers an area of 700 m2 and has the outdoor swimming pool with a sun deck and the **Natura Café** which opens during the summer months to offer guests a variety of fresh, light dishes as well as refreshing shakes and cocktails. 
+The hotel's 17 meeting rooms are distributed over three floors. Most of them have natural light and can host small meetings for ten people as well as large events for up to 560 people. 
+The third floor has seven meeting rooms and two spectacular exhibition areas; the 14th floorhas nine more meeting rooms with uninterrupted views of the sea and city and its own private reception area. The largest-capacity meeting room (up to 560 people approx.) is on the fourth floor, opposite the restaurant. 
+All the meeting rooms have modern, functional furniture,Wi-Fi and can provide all the necessary audiovisual equipment for your event. 
+The AC Barcelona Forum offers everything you?ll need to ensure your events are a resounding success.
+
+<img src = "https://z.cdrst.com/foto/hotel-sf/c4d/granderesp/hotel-ac-barcelona-forum-habitacion-4fa7709.jpg" width="360"> <img src = "https://www.shbarcelona.es/blog/es/wp-content/uploads/2015/06/cabecera-ac-barcelona-forum-piscina.jpg" width="360" align="right">
+
+**Montjuic room** for main meeting room
+
+<img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-classroom-2448-hor-wide.jpg?downsize=1440px:*"> 
+
+**S Gervasi room** Breakout-room
+
+<img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-meeting-0103-hor-wide.jpg?downsize=1440px:*"> 
+
+**Pedralbes room** Breakout-room
+
+<img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-meeting-2449-hor-wide.jpg?downsize=1440px:*">
+
+**Bonanova  room** Breakout-room
+
+<img src = "https://cache.marriott.com/marriottassets/marriott/BCNFO/bcnfo-meeting-0089-hor-wide.jpg?downsize=1440px:*">
+
+
+#### **HILTON DIAGONAL MAR**
+
+**Hilton Diagonal Mar Barcelona** overlooks the Mediterranean Sea, at the center of Barcelona’s shopping and business district, just a few meters away from the International Convention Centre of Barcelona (CCIB). It has 433 rooms, including 110 newly renovated rooms, styled in cool, calm tones inspired by nature that allows to quickly disconnecting from the tiring day. 
+
+The hotel has **22 flexible meeting and conference rooms** with natural light including a Ballroom with capacity for 1,000 people, and a large Hilton Pool Terrace area with a versatile floor space for events of up to 780 people for cocktails or private poolside celebrations. The hotel also boasts a fully equipped Business Center. 
+
+It also has a gym, and an exclusive restaurant to enjoy an exquisite Mediterranean food, as well as a seasonal Purobeach Barcelona - an urban oasis of happiness and an authentic world of sensations. Purobeach Barcelona was voted one of the best beach clubs in the world by Conde Nast Traveler. 
+
+Spend the day at the pool, add the pleasure of a relaxing treatment at the spa while listening to the unique Puro Music with the resident DJ’s, and discover the M3 cuisine concept with influences of Miami, Marrakech and Melbourne. Hotel guests will be able to enjoy Purobeach Barcelona sunbeds at special rates. 
+
+The hotel is located 25 minutes from Barcelona airport and 15 minutes from the city center.
+
+<img src = "https://www3.hilton.com/resources/media/hi/BCNDMHI/en_US/img/shared/full_page_image_gallery/main/HL_kfamilyrm3_8_1270x560_FitToBoxSmallDimension_Center.jpg" width="360"> <img src = "https://y.cdrst.com/foto/hotel-sf/422a/granderesp/hilton-diagonal-mar-barcelona-exterior-3d3debc.jpg" width="360" align="right">
+
+
+**Meeting room 5+6 room** for main meeting room
+
+<img src = "https://www.hiltonhotels.com/assets/img/Hotel%20Images/Hilton/B/BCNDMHI/BCNDMHI_gallery_Meetings_ballroom07.jpg"> 
+
+**Meeting room 1 room** Breakout-room
+
+<img src = "https://y.cdrst.com/foto/hotel-sf/422a/granderesp/hilton-diagonal-mar-barcelona-general-457a8ef.jpg"> 
+
+**Meeting room 2 room** Breakout-room
+
+<img src = "http://www.hiltonhotels.com/assets/img/hotels/LIMMFHH_Hilton_Lima_Miraflores/meeting-full-3.jpg">
+
+**Meeting room 3  room** Breakout-room
+
+<img src = "http://www.spain.conferencevenues.com/logos/hilton-diagonal-mar-barcelona-hotel-spain-image-13167-5-big.jpg">
+
+
+
+
+
+
+## Programme
+
+### **Programme Overview and timeline**
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+library(timevis)
+library(dplyr)
+library(readxl)
+
+timeline <- read_excel("timeline.xlsx", sheet = "Sheet1", 
+    col_types = c("date", 
+        "text", "text", "numeric", "text", 
+        "text"))
+
+data <- data.frame( id = 1:length(timeline$start),
+                    start = as.POSIXlt(timeline$start),
+                    content = timeline$content,
+                    group = timeline$group,
+                    type = "box",
+                    style = "background-color:#FF9933;")
+
+groups = data.frame(id = 1:4, content = c("Morning", "Lunch", "Afternoon", "Diner"))
+
+tl <- timevis(data, groups, showZoom = TRUE, zoomFactor = 0.2, fit = TRUE, width = '100%', height = 300)
+
+tl %>% setOptions(list(orientation = "top", align = "left"))
+
+```
+
+### **Map**
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+library(leaflet)
+library(stringr)
+library(ggmap)
+library(readxl)
+library(dplyr)
+library(leaflet.extras)
+library(shiny)
+
+coordinates <- read_excel("timeline.xlsx", 
+    sheet = "Sheet3", col_types = c("text", 
+        "text", "numeric", "numeric", "text", 
+        "text"))
+
+coordinates$Category <- factor(coordinates$Category)
+
+m <- coordinates %>% 
+  leaflet(options = leafletOptions(dragging = TRUE,
+  minZoom = 14, maxZoom = 18)) %>% 
+  addProviderTiles("Esri") %>% 
+  setView(lng = 2.1687300, lat = 41.3863900, zoom = 14) 
+
+pal <- colorFactor(palette = c("red","blue"),
+      levels = coordinates$Category)
+
+m %>% clearBounds() %>% 
+  addCircleMarkers(radius = 5, color = ~pal(Category)) %>% 
+  addPopups(popup = paste0("<b>",coordinates$Location,"</b>")) %>% 
+  addLegend(position = "bottomright", pal = pal, 
+  values = coordinates$Category) %>% addResetMapButton()
+
+```
+
+## **RESTAURANTS FOR DINNER AUGUST 20TH** 
+
+### **Recommended: Restaurant Arenal**
+
+* **Location:**Barceloneta beach 
+* **Cuisine:**Mediterranea cuisine
+* **Capacity:** Inside 100 pax; outdoor terrace 50 pax
+
+There are many ways to enjoy a day on the beach. While some like to lay down under the sun of La Barceloneta, others prefer to contemplate the scene far from the high summer temperatures. For them all, Arenal offers a matchless option.
+
+The privileged location of the restaurant allows us to have lunch or dinner almost with our feet on the sand under the marquee of a wonderful terrace. Besides, the huge windows of the elegant interior dining room –in which walls are covered with large black and white pictures- offer stunning views with the blue Mediterranean sea as a backdrop.
+
+<img src = "https://media-cdn.tripadvisor.com/media/photo-s/0e/e1/57/cc/entorno.jpg">
+
+
+### **Alternative Restaurants** {.tabset .tabset-fade .tabset-pills}
+
+#### **Tinglado** 
+
+* **Location:**Olympic Port
+* **Cuisine:**Mediterranea cuisine
+* **Capacity:** Inside 160 pax; private rooms for 20, 40 and 23 pax. Outdoor terrace; capacity depending on the season 
+
+Located at the the heart of Barcelona’s Vila Olímpica, **El Tinglado** is one of the fifteen restaurants that the emblematic Moncho's Group owns in the city.
+
+Inspired by the authentic **fishermen taverns**, that remind of the old fish markets in Barcelona, the space has its own seafood stall where clients choose the pieces that will be roasted in the large natural charcoal grill. The menu also includes Mediterranean specialties such as paella and other rice dishes.
+
+The restaurant has different spaces and a terrace with sea views
+
+<img src = "https://www.monchos.com/img_contenido/locales_galeria/4344_El-Tinglado-de-Moncho_s-(4).jpg"> 
+
+
+#### **Marina Bay**
+
+* **Location:**Olympic Port
+* **Cuisine:**Mediterranea cuisine
+* **Capacity:** First floor 120 pax; ground floor 120 pax; outdoor terrace 40 pax; private rooms up to 20 and 40 pax
+
+Founded in 1990, the **Moncho's Group** has over fifteen restaurants around the city. One of them is **Marina Bay** by Moncho’s, that has a 360° setting and dominates the views over Barcelona’s Port Olímpic and La Barceloneta beaches.
+
+In addition to the cozy interior dining room, the restaurant has two splendid terraces, one of them is covered and the other one located just below the Frank Guerhy’s 'Peix Daurat' and boasting great sea views.
+
+<img src = "https://www.monchos.com/img_contenido/locales_galeria/2835_Marina-Bay-by-Moncho_s-(106).jpg"> 
+
+
+#### **Barceloneta**
+
+* **Location:**Vell Port
+* **Cuisine:**Mediterranea cuisine
+* **Capacity:** 280 pax in total. 4 private meeting rooms with capacity from 20 to 70 pax 
+
+Founded in 1996, **Barceloneta** has an excellent reputation in the port district. With its high quality Mediterranean gastronomy and the carefully chosen decoration, it has a privileged location that permits a wonderful sea-view of the fishing harbour and the marina of Barcelona.
+
+Its cuisine is constantly evolving but remains true to its early style which proved so popular, it´s based on traditional fish restaurant cooking, with simple but elaborated recipes, and always with the freshest and highest quality products.
+
+Desserts, cakes and ice-creams are home-made, and the wine list is extensive and select.
+
+Service is professional, highly experienced and fast.
+
+During the summer sesson, it has large terrasses for more than 290 people, with wonderful views to the sea.
+<img src = "https://media-cdn.tripadvisor.com/media/photo-s/01/e6/ec/fe/vista-desde-la-terraza.jpg"> 
+
+
+#### **One Ocean Club**
+
+* **Location:**Vell Port
+* **Cuisine:**Mediterranea and Catalan cuisine
+* **Capacity:** 3 different spaces: indoor restaurant up to 80 pax ; outdoor terrace up to 30 pax; covered terrace up to 50 pax 
+
+OneOcean Club is an exclusive private members' club located in "OneOcean Port Vell" superyacht marina, opened in late 2014.
+
+The club includes a design restaurant and a cocktail lounge build out over the sea with amazing panoramic views of Barcelona’s skyline and the superyachts.
+
+This is a luxury oasis in a unique part of Barcelona, and is sure to be the go-to destination for Barcelona’s socially elite.
+
+With the interior design created by Barcelona’s El Equipo Creativo, the club combines comfort and style with unique views of the city, whether you’re relaxing on the bar terrace or sampling the culinary delights of our chefs.
+
+Working with ingredients sourced from markets in Barcelona, we have created an international, Catalan-fusion menu to put the club firmly on the fine-dining map.
+
+
+<img src = "http://www.luxuryspain.es/wp-content/uploads/2018/09/one-ocean-club-LuxurySpain.jpg"> 
+
+
+#### **Can Fisher**
+
+* **Location:**Icaria Beach
+* **Cuisine:**Market  cuisine
+* **Capacity:** indoor up to 100 pax and terrace up to 80 pax 
+
+Opened in June 2017, **Can Fisher** has a really attractive combination of elements: a modern design, a seafood cuisine with rice dishes as protagonists and an unbeatable location that provides the space with great views of the Mediterranean sea.
+
+The menu of the restaurant is based on fresh and local products, such as seafood and fish brought daily from the fish market and vegetables from the Barcelona's garden. **Can Fisher's cuisine** is traditionally based and recovers the flavors and aromas of a lifetime using current techniques.
+
+The restaurant has a large indoor dining room and a nice terrace ideal to enjoy the surroundings
+
+<img src = "https://canfisher.com/wp/wp-content/uploads/2017/06/terraza.jpg"> 
+
+#### **Cal Pintxo**
+
+* **Location:**Port Vell
+* **Cuisine:**Mediterranean cuisine
+* **Capacity:** indoor up to 160 pax and terrace up to 50 pax 
+
+In a place like the huge **Palau de Mar in Port Vell**, so packed with restaurants, **Cal Pintxo** stands out from the rest thanks to the excellent traditional Catalan cuisine that focuses on fish dishes.
+
+The restaurant is elegant and, regardless of the time, we will find ourselves in an intimate cosy place where we will feel really at ease. Besides, the restaurant offers a wonderful terrace where every single meal becomes a nice time with the Mediterranean sea and Montjuic as backdrop. There is also a private room that holds up to 40 people.
+
+**Cal Pinxo's** menu is fresh and varied, and invites us to enjoy the real paellas, fideuas, fresh fish and seafood, always with the best quality and simply elaborated with dedication.
+
+<img src = "https://u.tfstatic.com/restaurant_photos/511/2511/169/664/cal-pinxo-terraza-824bf.jpg"> 
+
+
+#### **Mana75**
+
+* **Location:**Next to Barceloneta Beach
+* **Cuisine:**Mediterranean cuisine
+* **Capacity:** indoor up to 100 pax and terrace up to 60 pax 
+
+In a space with an original and impeccable interior design and an impressive terrace of more than 300 square meters, we can enjoy a Mediterranean set menu prepared with fresh products.
+
+In the kitchen of **Maná 75**, the marine flavor takes on special prominence given its location close to the sea and the luxurious Hotel W. While we savor some great starters, in **Maná 75** we can see how our paella is prepared in a large bar with 19 stoves, the largest show cooking of rice from Europe.
+
+<img src = "https://cdn.atrapalo.com/common/photo/res/51392/0/ticr_890_370.jpg"> 
+
+
+#### **Los Caracoles**
+
+* **Location:**Gothic quarter
+* **Cuisine:**Mediterranean and traditional catalan cuisine
+* **Capacity:** Many semi-private spaces with different capacities from 12 up to 50 pax. 
+
+In 1835, the Bofarull family founded, in the heart of Barcelona’s Gothic Quarter, **Los Caracoles**, a restaurant that since its beginnings specialized in this popular Catalan dish (‘caracoles’ means ‘snails’) and other deeply-rooted recipes. Today, the fifth generation of the family sticks to the essence of this establishment that oozes history on every corner and attracts visitors from all the world.
+
+The peculiar and surprising decor of the restaurant keeps the charm of past times with an inevitable decadent air, and has welcomed all sorts of celebrities during its extensive career. The space is spread out over different dining rooms, all of the with their own personality and specially ideal for group celebrations.
+
+The gastronomy at **Los Caracoles** has no secrets and, although it is cooked with good products, it is really simple.
+
+<img src = "http://cdn.restalo.com/static/img/restaurants/940/94065/94065_6915.gl.jpg"> 
+
+
+## **GALA DINNER OPTIONS FOR AUGUST 22ND** 
+
+### **Recommended: Oleum Restaurant**
+
+* **Location:**First floor inside Palau Nacional de Montjuic 
+* **Cuisine:**Mediterranean cuisine
+* **Capacity:** Up to 120 pax. 
+
+The great National Art Museum of Catalunya, the Palau Nacional de Montjuïc (National Palace) hosts the magnificent **Òleum restaurant**, which offers an environment and unparalleled views. From its windows we can see all of Barcelona and at night, on weekend, we can enjoy the magic fountain. It is ideal for art and gastronomy lovers.
+
+It is a very special environment, with a modern design and a sober and elegant atmosphere that gives us impressive views of Barcelona with Tibidabo in the background, thanks to huge windows and a panel of slanted mirrors that reflect the profile of the city.
+
+The cuisine presents a Mediterranean-inspired menu made with quality produce. Really, a right choice if we want to impress someone.
+
+_For a group minimum of 50 paying guests, we can have the restaurant in exclusivity for the group. It has an independent entrance by an elevator but if the group will go to access through museum, it could be  possible by authorization (10 days prior of the event and entrance costs)_
+
+<img src = "https://u.tfstatic.com/restaurant_photos/501/49501/169/612/oleum-sala-8df13.jpg"> 
+
+### **Alternative Venues** {.tabset .tabset-fade .tabset-pills}
+
+#### **Glassroom** 
+
+* **Location:**Passeig de Gracia - Barcelona city centre
+* **Cuisine:**Catering
+* **Capacity:** Up to 60 pax. 
+
+Welcome to the heart of Barcelona. Welcome to a modernist, magical, noble, elegant and bright space. In The GlassRoom, they have one main objective: to make any guests feel like at home, where the visitors can celebrate special moments .... 
+
+This venue is an unique opportunity to know a house from XIX century located in the heart of Barcelona and recreate the reception and dinner in one of the most exclusive areas of the city: Passeig de Gracia, where all the main shops and monuments (Gaudi Houses are located in this boulevard).
+
+<img src = "http://static1.squarespace.com/static/56a60592c21b866082d56892/56a9eb5b57eb8df616f03ffb/56f1103a40261d8cdb6b26b1/1495706147166/Comedor+-+TheGlassRoom+-+Gu%C3%ADaSingular.jpg?format=1500w"> 
+
+
+#### **Jean Leon Winery* 
+
+* **Location** Jean Leon Winery - Penedes region
+* **Duration** 3 hours plus meal  
+* **Capacity** Minimum 10pax - maximum 150pax 
+* **Included** Bus, activity according client wishes, meal and wine tasting
+
+**Jean Leon** invites the visitors to discover the story of an extraordinary man who was ahead of his time. Thanks to his unique vision, he triumphed in Hollywood and achieved his dream of creating a signature wine 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OyDeLQsdS94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+**_We will divide the group in 2 groups: 1 group will visit the winery with an expert of the property and the second group will have a cocktail in the gardens. Once the activity will finish, the groups will swap and do the other activity_**
+
+**_Once the group will have done both activities all together will do the wine tasting (3 wines) in winery gardens followed by the dinner "al fresco" if the weather is nice or indoor in the glass room overlooking Penedes valley_**
+
+<img src = "https://www.jeanleon.com/wp-content/uploads/2017/06/7-novias-7-hermanos-1.jpg"> 
+
+#### **Casa Mila** 
+
+* **Location:**Passeig de Gracia - Barcelona city centre
+* **Cuisine:**Catering
+* **Capacity:** Up to 200 pax. Different rooms for events
+
+Celebrate your special event at **Casa Mila**, one of Antoni Gaudi’s most famous buildings, an exclusive venue in the heart of Barcelona and an **icon of the city** that is recognised around the entire world. A work of art, both inside and out, and declared a World Heritage Site by **UNESCO**, La Pedrera today is a major cultural centre that radiates creation and knowledge.
+
+Finding a striking, attractive and welcoming space that will delight your guests can be difficult, all the more so if you are looking to create an unforgettable experience. **La Pedrera** is keen to ensure your event is a unique experience, and to make this happen it offers iconic spaces fully equipped in an outstanding Modernista setting in one of the most prestigious venues in Barcelona.
+
+<img src = "https://cdn.getyourguide.com/img/tour_img-315009-148.jpg"> 
+
+For the group we will have the **room Gaudi** in exclusivity 
+<img src = "https://www.lapedrera.com/sites/default/files/2018-03/lloguer-pedrera-gaudi-esdeveniments-bcn.JPG"> 
+
+END OF THE PROGRAMME
+
+*****
+## Budget
+
+```{r echo=FALSE, message=FALSE,warning=FALSE}
+
+library(readxl)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(DT)
+
+budget <- read_excel("timeline.xlsx", sheet = "Sheet2", 
+    col_types = c("date", "text", "text", 
+        "numeric", "text", "numeric", "numeric"))
+budget$DATE <- as.Date(budget$DATE)
+
+DT::datatable(budget, extensions = "Buttons",rownames = FALSE, options = list(paging= FALSE,
+initComplete = JS("
+    function(settings, json) {
+      $(this.api().table().header()).css({
+        'background-color': '#ee7600 ',
+        'color': '#fff'
+      });
+    }"),
+dom ='Bfrtip', buttons = c('copy','print'),                           pageLength = nrow(budget),autoWidth = TRUE)) %>% 
+   formatDate('DATE') %>% 
+  formatCurrency(6:7,'\U20AC')
+
+
+```
+
+### Terms & Conditions
+
+  *Rates valid for 2019.
+  
+  *Net rates for ASIANA, spol. s r. o.
+  
+  *For a group of minimum 55 pax
+  
+  *Cutting Edge Events management fee including in the detailed rates
+  
+  *VAT included. 
+  
+  *No reservation has been done. Availability upon request.
+  
